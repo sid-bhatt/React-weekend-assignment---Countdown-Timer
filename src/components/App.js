@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      time >= 0 && setTime(time - 1);
+      time > 0 && setTime(time - 1);
     }, 1000);
   }, [time]);
 
