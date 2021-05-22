@@ -13,7 +13,12 @@ const App = () => {
 
   const decreamentCount = (e) => {
     if (e.key === "Enter") {
-      setTime(Math.floor(e.target.value));
+      // console.log(isNaN(e.target.value));
+      if (isNaN(e.target.value)) {
+        setTime(0);
+      } else {
+        setTime(Math.floor(e.target.value));
+      }
     }
   };
 
