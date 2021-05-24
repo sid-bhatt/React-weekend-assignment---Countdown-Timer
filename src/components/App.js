@@ -12,7 +12,7 @@ const App = () => {
         time > 0 && setTime(time - 1);
       }, 1000);
     valid && setTime(0);
-  }, [valid]);
+  }, [time]);
 
   function decreamentCount(e) {
     if (e.key === "Enter") {
