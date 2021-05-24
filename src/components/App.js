@@ -4,11 +4,14 @@ import "../styles/App.css";
 const App = () => {
   // write your code here
   const [time, setTime] = useState(0);
+  const [valid, setValid] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      time > 0 && setTime(time - 1);
-    }, 1000);
+    if (valid === true) {
+      setTimeout(() => {
+        time > 0 && setTime(time - 1);
+      }, 1000);
+    }
   }, [time]);
 
   const decreamentCount = (e) => {
@@ -16,7 +19,9 @@ const App = () => {
       // console.log(isNaN(e.target.value));
       if (isNaN(e.target.value)) {
         setTime(0);
+        setValid(false);
       } else {
+        setValid(true);
         setTime(Math.floor(e.target.value));
       }
     }
