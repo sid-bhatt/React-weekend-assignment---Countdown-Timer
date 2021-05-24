@@ -12,19 +12,19 @@ const App = () => {
         time > 0 && setTime(time - 1);
       }, 1000);
     valid && setTime(0);
-  }, [time]);
+  }, [valid]);
 
-  const decreamentCount = (e) => {
+  function decreamentCount(e) {
     if (e.key === "Enter") {
       // console.log(isNaN(e.target.value));
-      if (isNaN(e.target.value) || e.target.value === 0) {
+      if (isNaN(e.target.value) || e.target.value == 0) {
         setValid(true);
       } else {
         setValid(false);
         setTime(Math.floor(e.target.value));
       }
     }
-  };
+  }
 
   return (
     <div className="wrapper">
